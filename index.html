@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6b1f2d">
+<title>ريف اليمن | قائمة الطعام</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+:root{
+  --burgundy:#6b1f2d; --brick:#b4533a; --sand:#d9c3a1; --cream:#f7f4ee;
+  --olive:#6e7a4e; --brown:#3a2c25; --gold:#b58a3c; --line:#ded4c5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--brown);font-family:Cairo,Arial,sans-serif}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;opacity:.055;z-index:-1;
+ background-image:radial-gradient(#6b1f2d .7px,transparent .7px);background-size:8px 8px;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.hero{position:relative;padding:26px 0 54px;overflow:hidden;background:
+ linear-gradient(180deg,rgba(107,31,45,.97),rgba(107,31,45,.93)),var(--burgundy);color:#fff}
+.hero:after,.footer:before{content:"";position:absolute;left:0;right:0;height:24px;background:
+ repeating-linear-gradient(135deg,transparent 0 13px,#d9c3a1 13px 17px,transparent 17px 28px);
+ opacity:.65}
+.hero:after{bottom:0}.footer:before{top:0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:18px}
+.logo{width:92px;height:92px;border-radius:50%;object-fit:cover;background:#fff;border:4px solid var(--sand)}
+.brand{text-align:right;flex:1}.brand h1{margin:0;font-family:Amiri,serif;font-size:38px}.brand p{margin:0;color:#eadcc7;letter-spacing:3px;font-size:12px}
+.order{background:var(--sand);color:var(--burgundy);padding:10px 17px;border-radius:999px;font-weight:800}
+.hero-copy{text-align:center;padding:28px 0 10px}.hero-copy h2{font-family:Amiri,serif;font-size:46px;margin:0 0 4px}.hero-copy p{margin:0;color:#eadcc7}
+.nav{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;gap:8px;overflow:auto;padding:10px 0}.nav a{white-space:nowrap;padding:9px 15px;border:1px solid var(--line);border-radius:999px;font-weight:700;font-size:14px}.nav a:hover{background:var(--burgundy);color:#fff}
+.tools{padding:22px 0 6px;display:flex;gap:12px;align-items:center}.search{flex:1;position:relative}.search input{width:100%;padding:14px 45px 14px 16px;border:1px solid var(--line);border-radius:14px;background:#fff;font-family:inherit;font-size:15px;outline:none}.search span{position:absolute;right:15px;top:10px;font-size:22px}
+.section{padding:30px 0 8px;scroll-margin-top:70px}.section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}.section-head:before{content:"";height:38px;width:8px;background:var(--burgundy);border-radius:8px}.section-head h3{margin:0;font-family:Amiri,serif;font-size:32px;color:var(--burgundy)}.section-head small{color:#806f60}
+.subhead{display:flex;align-items:center;gap:10px;margin:22px 0 12px;color:var(--burgundy)}.subhead h4{margin:0;font-size:21px}.subhead:after{content:"";height:1px;flex:1;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.card{position:relative;background:#fff;border:1px solid #e7dfd2;border-radius:14px;padding:14px 16px;min-height:78px;box-shadow:0 5px 18px rgba(58,44,37,.035);transition:.2s}
+.card:hover{transform:translateY(-2px);border-color:#cdbca1}
+.card:before{content:"";position:absolute;top:0;right:0;width:6px;height:100%;border-radius:0 14px 14px 0;background:var(--sand);opacity:.65}
+.card.featured{background:linear-gradient(135deg,#fff,#f5ede1);border-color:#d7c2a0}
+.name-ar{font-weight:800;font-size:16px;padding-left:92px}.name-en{font-size:12px;color:#87776a;margin-top:2px;padding-left:92px}.price{position:absolute;left:14px;top:14px;color:var(--burgundy);font-weight:800;font-size:15px;direction:ltr}
+.desc{font-size:11px;color:#907e6e;margin-top:7px;line-height:1.6}
+.search-empty{display:none;text-align:center;padding:35px;color:#806f60}
+.footer{position:relative;margin-top:50px;background:var(--brown);color:#fff;padding:55px 0 35px;text-align:center}.footer h3{font-family:Amiri,serif;font-size:30px;margin:0 0 6px}.footer p{color:#d8cabc}.phones{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.phones a{border:1px solid #8f7b70;border-radius:999px;padding:9px 15px;color:#f2dfc4}
+.note{background:#efe5d5;border:1px solid #ddc9a9;padding:12px 15px;border-radius:12px;color:#624f43;margin:12px 0}
+@media(max-width:700px){
+ .topbar{align-items:flex-start}.logo{width:72px;height:72px}.brand h1{font-size:29px}.order{font-size:12px;padding:8px 11px}
+ .hero-copy h2{font-size:36px}.grid{grid-template-columns:1fr}.card{padding:13px}.name-ar,.name-en{padding-left:82px}
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <div class="topbar">
+      <img class="logo" src="assets/logo.jpg" alt="شعار ريف اليمن">
+      <div class="brand"><h1>ريف اليمن</h1><p>REEF AL YEMEN • RESTAURANT</p></div>
+      <a class="order" href="#contact">الطلبات والحجوزات</a>
+    </div>
+    <div class="hero-copy"><h2>منيو ريف اليمن</h2><p>تجربة يمنية أصيلة بروح الريف</p></div>
+  </div>
+</header>
+
+<nav class="nav"><div class="container nav-inner">
+  <a href="#bakery">مخبوزات وسلطات</a><a href="#platters">الصواني</a><a href="#fish">سمك</a>
+  <a href="#sweets">حلويات</a><a href="#juices">عصائر</a><a href="#hot">مشروبات ساخنة</a>
+  <a href="#grills">مشويات مصرية</a><a href="#chicken">دجاج يمني</a><a href="#yemeni">مأكولات يمنية</a>
+  <a href="#meat">اللحم اليمني</a><a href="#appetizers">مقبلات</a>
+</div></nav>
+
+<main class="container">
+  <div class="tools"><div class="search"><span>⌕</span><input id="search" placeholder="ابحث عن طبق بالعربي أو English..."></div></div>
+  <div class="note">الأسعار بالجنيه المصري. أطباق السمك مكتوب عليها «حسب سعر اليوم» كما وردت في المنيو.</div>
+  <div id="menu"></div><div id="empty" class="search-empty">مفيش نتائج للبحث ده.</div>
+</main>
+
+<footer class="footer" id="contact"><div class="container">
+  <h3>ريف اليمن</h3><p>للطلبات والحجوزات</p>
+  <div class="phones">
+    <a href="tel:01200333114">01200333114</a>
+    <a href="tel:01278635229">01278635229</a>
+    <a href="tel:01278635220">01278635220</a>
+  </div>
+</div></footer>
+
+<script>
+const sections = [
+{ id:"bakery", title:"مخبوزات وسلطات", en:"Bakery & Salads", items:[
+["خبز ملوح رشوش سنجل","Single Malooh Rashoush Bread","40 EGY"],
+["خبز رطب دبل أو خبز ملوح رشوش دبل","Double Soft Bread or Double Malooh Rashoush Bread","60 EGY"],
+["خبز رطب سنجل","Single Soft Bread","40 EGY"],["حمص","Hummus","60 EGY"],
+["خبز مثلثات ريف اليمن","Yemen Reef Triangle Bread","80 EGY"],["ملوح شعير","Barley Maloog","50 EGY"],
+["ملوح بر","Whole-Wheat Maloog","50 EGY"],["خبز تنور صنعاني","Sanaani Tandoor Bread","40 EGY"],
+["سلطة زبادي صغير","Small Yogurt Salad","60 EGY"],["سلطة زبادي كبير","Large Yogurt Salad","90 EGY"],
+["سلطة خضراء صغير","Small Green Salad","40 EGY"],["سلطة خضراء كبير","Large Green Salad","60 EGY"],
+["سلطة مكس","Mixed Salad","170 EGY"],["سلطة سلايز","Slices Salad","70 EGY"],
+["بابا غنوج","Baba Ghanoush","60 EGY"],["تبولة","Tabbouleh","60 EGY"],["ثومية","Garlic Sauce (Thoumiya)","60 EGY"],
+["حلبة سادة","Plain Hulbah (Fenugreek Dip)","50 EGY"],["فَتّوش","Fattoush","80 EGY"],["طحينة","Tahini","60 EGY"],
+["سحاوي أخضر صغير","Small Green Sahawiq","40 EGY"],["سحاوي أخضر كبير","Large Green Sahawiq","60 EGY"],
+["سحاوي أحمر","Red Sahawiq","25 EGY"],["سحاوي جبن صغير","Small Cheese Sahawiq","45 EGY"],
+["سحاوي جبن كبير","Large Cheese Sahawiq","65 EGY"],["عشار عدني","Adeni Ashar","65 EGY"],
+["جبنة بالطماطم","Cheese with Tomatoes","75 EGY"],["شفوت","Shafout","60 EGY"],["طماطم متبلة","Seasoned Tomatoes","60 EGY"],
+["باذنجان مخلل","Pickled Eggplant","50 EGY"],["بنجر","Beetroot","50 EGY"],["سحاوي سادة كبير","Large Plain Sahawiq","35 EGY"],
+["بصل سلايز","Onion","30 EGY"],["خيار مخلل","Pickled Cucumber","50 EGY"],["بصل مقلي","Fried Onions","25 EGY"],
+["جرجير","Arugula","30 EGY"],["كلو سلو","Coleslaw","80 EGY"]
+]},
+{ id:"platters", title:"الصواني", en:"Platters", items:[
+["صينية المعز","Al Moez Platter • 4 people","1,180 EGY","ربع كفتة + ربع طرب + نصف دجاجة + ربع شيش طاووق + أرز بسمتي + ميكس محاشي صغيرة + فتة معصوب سادة"],
+["صينية مشاوينا","Our Grill Platter","1,450 EGY","نصف كفتة + نصف طرب + نصف فرخة من اختيارك (شواية / مندي / فحم) + ميكس سلطات + سحاوق"],
+["صينية ريف اليمن","Yemen Countryside Platter • 4 people","2,200 EGY","نفر مندي + نفر حنيذ + نصف دجاجة + كبدة غنمي + خبز ملوح دبل + سمبوسك لحم وجبن + ميكس سلطة + فتة معصوب سادة"],
+["صينية تحيا مصر","Tahya Masr Platter • 7 people","2,400 EGY","نصف طرب + نصف كفتة + دجاجة ونصف + ممبار + ملوخية + خبز ملوح دبل + أرز بسمتي + فتة تمر قشطة وعسل"],
+["صينية أهل اليمن","Ahl Al-Yemen Platter • 5 people","3,000 EGY","ربع تيس مندي + نفر حنيذ + فحسة غنمي + سلته + خبز ملوح مثلث + ميكس سلطة + كنافة بالقشطة + قطعة بنت الصحن"],
+["صينية السلطان","Sultan Platter • 7 people","3,950 EGY","ربع تيس مندي + نفران حنيذ + فحسة بقري + دجاجة (مندي أو شواية) + خبز ملوح دبل + ميكس سلطة + 2 فتة تمر قشطة وعسل"],
+["صينية الليلة الكبيرة","Al-Layla Al-Kebira Platter • 12 people","5,200 EGY","كيلو طرب + كيلو كفتة + كيلو شيش طاووق + دجاجة ونصف + ملوخية + نصف كبدة غنمي + أرز بسمتي + ميكس محاشي كبير + ممبار + 3 كنافة بالقشطة"],
+["صينية العيلة","Family Platter","5,950 EGY","نصف تيس مندي + ربع تيس حنيذ + دجاجة كاملة + نصف كفتة + ربع طرب + نصف ورق عنب + 4 سمبوسك جبن + 4 سمبوسك لحم + طاجن ملوخية + ميكس سلطات + سحاوي + مرق"],
+["صينية ديوان الشيخ","Diwan Al-Sheikh Platter • 12 people","9,300 EGY","نصف تيس مندي + 4 نفر حنيذ + فحسة غنمي + لحم وجبن + خبز ملوح مثلث + ميكس سلطة + 2 فتة معصوب قشطة وعسل"]
+]},
+{ id:"fish", title:"سمك", en:"Fish", items:[
+["سمك عربي تنور","Arabic-Style Tandoor Fish","حسب سعر اليوم"],["سمك ديرك تنور","Tandoor Derk Fish","حسب سعر اليوم"],
+["سمك ديرك","Derk Fish","حسب سعر اليوم"],["سمك ديرك مقلي","Fried Derk Fish","حسب سعر اليوم"],
+["قلابة سمك","Fish Stir-Fry","حسب سعر اليوم"],["قلابة جمبري","Shrimp Stir-Fry","حسب سعر اليوم"]
+]},
+{ id:"sweets", title:"الحلويات اليمنية", en:"Yemeni Sweets", items:[
+["قطعة رواني","Rawani Slice","80 EGY"],["قطعة شعوبية","Shaobiyah Slice","80 EGY"],["كنافة بالقشطة","Kunafa with Cream","90 EGY"],
+["كريم كراميل","Crème Caramel","55 EGY"],["فتة تمر سادة","Plain Date Fattah","80 EGY"],["فتة تمر قشطة وعسل","Date Fattah with Cream & Honey","140 EGY"],
+["فتة معصوب سادة","Plain Masoub Fattah","80 EGY"],["فتة معصوب قشطة وعسل","Date Masoub Fattah with Cream & Honey","140 EGY"],
+["فتة معصوب ملكي بالمكسرات","Royal Masoub Fattah with Nuts","190 EGY"],["حلاوة لبن","Milk Halawa","75 EGY"],
+["حلاوة هريسة","Harissa Sweet","75 EGY"],["طبق بنت الصحن كامل","Whole Bint Al Sahn Dish","280 EGY"],["قطعة بنت الصحن","Bint Al Sahn Slice","60 EGY"],
+["عريكة ميكس بالمكسرات","Mixed Arekah with Nuts","190 EGY"],["هريسة خلطة","Mixed Harissa","80 EGY"],["تشيز كيك","Cheesecake","110 EGY"],
+["ترت بلح","Date Tart","75 EGY"],["شوكليت كيك","Chocolate Cake","75 EGY"],["فروت سلاط آيس كريم","Fruit Salad Ice Cream","150 EGY"],
+["فروت سلاط","Fruit Salad","100 EGY"],["آيس كريم ريف اليمن بالمكسرات • 2 بولة","Yemen Reef Ice Cream • 2 scoops","160 EGY"],
+["طبق فاكهة صغير","Small Fruit Plate","150 EGY"],["طبق فاكهة كبير","Large Fruit Plate","250 EGY"],["مولتن كيك","Molten Cake","95 EGY"],
+["فتة سادة","Plain Fattah","75 EGY"],["فتة زبيدي","Zeyedi Fattah","350 EGY"]
+]},
+{ id:"juices", title:"العصائر الفريش والكوكتيلات", en:"Fresh Juices & Cocktails", items:[
+["لبن رايب صغير","Small Rayeb","35 EGY"],["لبن رايب كبير","Large Rayeb","55 EGY"],
+["عرايسي • مانجو، تفاح، تمر، عجوة، مكسرات وعسل","Araisi","75 EGY"],["صن شاين","Sunshine • Pomegranate, 7UP & Lemon","50 EGY"],
+["إيفر جرين","Ever Green","50 EGY"],["سموزي","Smoothie • Mango, Watermelon, Strawberry & Lemon","65 EGY"],
+["أوريو تشيك","Oreo Shake","80 EGY"],["ليمون نعناع","Lemon Mint","35 EGY"],["ليمون سادة","Plain Lemon","30 EGY"],
+["مياه معدنية صغير","Small Mineral Water","25 EGY"],["بيبسي / سفن / ميرندا","Pepsi / 7UP / Mirinda","45 EGY"],
+["شويبس جولد","Schweppes Gold","50 EGY"],["بيرل / فيروز / موسى","Birell / Fayrouz / Moussy","50 EGY"],["ريد بول","Red Bull","100 EGY"],
+["عصير جوافة","Guava Juice","90 EGY"],["عصير برتقال","Orange Juice","90 EGY"],["عصير فراولة","Strawberry Juice","90 EGY"],
+["عصير مانجو","Mango Juice","90 EGY"],["عصير خوخ","Peach Juice","90 EGY"],["كوكتيل ريف اليمن","Reef Al Yemen Cocktail","110 EGY"],
+["فلوريدا كوكتيل","Florida Cocktail","100 EGY"],["زبادي خلاط","Blended Yogurt","60 EGY"],["موز باللبن","Banana Milk","95 EGY"],
+["ميلك تشيك","Milkshake","60 EGY"],["أفوكادو","Avocado","100 EGY"],["ليمون بالعسل/حليب","Lemon with Honey / Milk","80 EGY"],
+["زبادي عسل","Yogurt with Honey","60 EGY"],["زبادي فواكه","Fruit Yogurt","70 EGY"],["عصير بطيخ","Watermelon Juice","80 EGY"],
+["صحن بطيخ صغير","Small Watermelon Plate","120 EGY"],["صحن بطيخ كبير","Large Watermelon Plate","185 EGY"]
+]},
+{ id:"hot", title:"مشروبات ساخنة", en:"Hot Drinks", items:[
+["قهوة عربي مع تمر","Arabic Coffee with Dates","75 EGY"],["قهوة فرنساوي","French Coffee","70 EGY"],["كابتشينو","Cappuccino","60 EGY"],
+["نسكافيه","Nescafé","60 EGY"],["كافيه لاتيه","Café Latte","60 EGY"],["كافيه موكا","Café Mocha","60 EGY"],["هوت شوكلت","Hot Chocolate","60 EGY"],
+["هوت سيدر","Hot Cider","70 EGY"],["دلة قهوة عربي مع تمر","Arabic Coffee Pot with Dates","145 EGY"],["ثلاجة شاي عدني","Adeni Tea Pot","200 EGY"],
+["شاي أحمر كشري","Koshari Red Tea","40 EGY"],["شاي أحمر فتلة","Red Tea Bag","45 EGY"],["براد شاي أحمر كشري","Red Tea Pot","75 EGY"],
+["شاي حليب عدني","Adeni Milk Tea","60 EGY"],["شاي أخضر","Green Tea","50 EGY"],["ينسون","Anise","40 EGY"],["نعناع","Mint","40 EGY"],
+["اسبريسو","Espresso","45 EGY"],["اسبريسو دبل","Double Espresso","75 EGY"],["قهوة تركي","Turkish Coffee","45 EGY"],["قهوة تركي دبل","Double Turkish Coffee","65 EGY"]
+]},
+{ id:"grills", title:"المشويات المصرية", en:"Egyptian Grills", items:[
+["كيلو كفتة بلدي","1 Kilogram Local Kofta","950 EGY"],["كيلو إلا ربع كفتة بلدي","750 gm Local Kofta","715 EGY"],
+["نصف كيلو كفتة بلدي","Half Kilogram Local Kofta","490 EGY"],["ربع كيلو كفتة بلدي","Quarter Kilogram Local Kofta","250 EGY"],
+["كيلو طرب بلدي","1 Kilogram Local Torb","1,170 EGY"],["كيلو إلا ربع طرب بلدي","750 gm Torb","890 EGY"],
+["نصف كيلو طرب بلدي","Half Kilogram Torb","590 EGY"],["ربع كيلو طرب بلدي","Quarter Kilogram Torb","295 EGY"],
+["كيلو ميكس جريل","1 Kilogram Grill Mix","1,490 EGY"],["كيلو إلا ربع ميكس جريل","750 gm Grill Mix","1,150 EGY"],
+["نصف كيلو ميكس جريل","Half Kilogram Grill Mix","780 EGY"],["ربع كيلو ميكس جريل","Quarter Kilogram Grill Mix","400 EGY"],
+["كيلو شيش طاووق","1 Kilogram Shish Tawook","910 EGY"],["كيلو إلا ربع شيش طاووق","750 gm Shish Tawook","690 EGY"],
+["نصف كيلو شيش طاووق","Half Kilogram Shish Tawook","460 EGY"],["كيلو كبدة غنمي","1 Kilogram Lamb Liver","830 EGY"],
+["كيلو إلا ربع كبدة غنمي","750 gm Lamb Liver","620 EGY"],["نصف كيلو كبدة غنمي","Half Kilogram Lamb Liver","430 EGY"],["ربع كيلو كبدة غنمي","Quarter Kilogram Lamb Liver","220 EGY"]
+]},
+{ id:"chicken", title:"الدجاج اليمني", en:"Yemeni Chicken", items:[
+["دجاج حنيذ كامل","Whole Hanith Chicken","450 EGY"],["نصف دجاج حنيذ","Half Hanith Chicken","250 EGY"],
+["دجاج مندي كامل","Whole Mandi Chicken","450 EGY"],["نصف دجاج مندي","Half Mandi Chicken","250 EGY"],
+["دجاج شواية كامل","Whole Rotisserie Chicken","450 EGY"],["نصف دجاج شواية","Half Rotisserie Chicken","250 EGY"],
+["دجاج فحم كامل","Whole Charcoal-Grilled Chicken","450 EGY"],["نصف دجاج فحم","Half Charcoal-Grilled Chicken","250 EGY"],
+["دجاج برياني كامل","Whole Biryani Chicken","530 EGY"],["نصف دجاج برياني","Half Biryani Chicken","265 EGY"],
+["دجاج مضغوط كامل","Whole Madhghout Chicken","525 EGY"],["نصف دجاج مضغوط","Half Madhghout Chicken","265 EGY"],["نصف دجاج مسلوق","Half Boiled Chicken","220 EGY"]
+]},
+{ id:"yemeni", title:"المأكولات اليمنية", en:"Yemeni Cuisine", items:[
+["بيض شكشوكة","Shakshouka Eggs","100 EGY"],["بيض عيون","Sunny-Side-Up Eggs","90 EGY"],["بيض أومليت","Omelette Eggs","90 EGY"],
+["قلابة تونة","Tuna Stir-Fry","150 EGY"],["فاصوليا تونة","Beans with Tuna","160 EGY"],["بازيلاء تونة","Peas with Tuna","160 EGY"],
+["فول","Foul","80 EGY"],["فول مع البيض","Foul with Eggs","90 EGY"],["بازيلا","Peas","80 EGY"],["بازيلا مع البيض","Peas with Eggs","140 EGY"],
+["كبدة غنمي بلدي","Local Lamb Liver","220 EGY"],["لحم صغار","Baby Lamb Meat","150 EGY"],["فحسة غنمي","Lamb Fahsa","400 EGY"],["فحسة بقري","Beef Fahsa","350 EGY"],
+["سلته","Saltah","200 EGY"],["دقَة","Dagga • Yemeni Salsa","150 EGY"],["عقدة لحم بقري","Beef Aqdah","200 EGY"],["عقدة دجاج","Chicken Aqdah","150 EGY"],
+["عقدة لحم غنمي","Lamb Aqdah","450 EGY"],["مشكل فرن","Mixed Oven Dish","70 EGY"],["فتة مرق لحم غنمي","Lamb Broth Fattah","450 EGY"],
+["فتة مرق سادة","Plain Broth Fattah","80 EGY"],["لحسة بيض جبن","Egg & Cheese Mash","100 EGY"],["فاصوليا حرضة","Haradah Beans","100 EGY"],
+["فاصوليا ناشف","Dry Beans","100 EGY"],["فاصوليا بالبيض","Beans with Eggs","150 EGY"],["فول بالجبن","Foul with Cheese","100 EGY"],
+["كبدة حرضة","Haradah Liver","220 EGY"],["كباب صنعاني","Sanaa-style Kebab","270 EGY"],["شكشوكة عدني","Adeni Shakshouka","100 EGY"],["شكشوكة بالجبن","Shakshouka with Cheese","100 EGY"]
+]},
+{ id:"meat", title:"اللحم اليمني", en:"Yemeni Meat", items:[
+["نفر لحم مندي","One Portion Mandi Lamb","590 EGY"],["نفر لحم برم","One Portion Baram Lamb","600 EGY"],["نفر لحم برم أرز","One Portion Baram Lamb with Rice","645 EGY"],
+["نفر لحم حنيذ","One Portion Hanith Lamb","590 EGY"],["نفر لحم مزموم","One Portion Mazmum Lamb","590 EGY"],["نفر برياني لحم","One Portion Lamb Biryani","590 EGY"],
+["نفر لحم مضغوط","One Portion Madhghout Lamb","590 EGY"],["نفر لحم زربيان","One Portion Lamb Zurbian","590 EGY"],["ربع تيس مقلقل","Quarter Muqalqal Goat","1,600 EGY"],
+["تيس مرق","Goat Broth • Whole","5,600 EGY"],["نصف تيس مرق","Half Goat Broth","2,900 EGY"],["ربع تيس مرق","Quarter Goat Broth","1,500 EGY"],
+["تيس مندي كامل","Whole Mandi Goat","5,600 EGY"],["نصف تيس مندي","Half Mandi Goat","2,900 EGY"],["ربع تيس مندي","Quarter Mandi Goat","1,500 EGY"],
+["تيس حنيذ كامل","Whole Hanith Goat","5,600 EGY"],["نصف تيس حنيذ","Half Hanith Goat","2,900 EGY"],["ربع تيس حنيذ","Quarter Hanith Goat","1,500 EGY"],
+["تيس مضغوط كامل","Whole Madhghout Goat","5,800 EGY"],["نصف تيس مضغوط","Half Madhghout Goat","2,950 EGY"],["ربع تيس مضغوط","Quarter Madhghout Goat","1,600 EGY"],
+["تيس مزموم كامل","Whole Mazmum Lamb","5,700 EGY"],["نصف تيس مزموم","Half Mazmum Lamb","2,900 EGY"],["ربع تيس مزموم","Quarter Mazmum Lamb","1,500 EGY"],
+["تيس زربيان كامل","Whole Zurbian Goat","5,800 EGY"],["نصف تيس زربيان","Half Zurbian Goat","2,950 EGY"],["ربع تيس زربيان","Quarter Zurbian Goat","1,600 EGY"],
+["راس تيس مندي","Mandi Goat Head","100 EGY"],["راس تيس مندي بالأرز","Mandi Goat Head with Rice","150 EGY"],["خروف كامل","Whole Lamb","حسب الطلب"],
+["نفر أرز مندي","One Portion Mandi Rice","100 EGY"],["نفر أرز بشاور","One Portion Peshawari Rice","100 EGY"],["أرز برياني سادة","Plain Biryani Rice","100 EGY"],["نفر أرز أبيض","One Portion White Rice","100 EGY"]
+]},
+{ id:"appetizers", title:"مقبلات", en:"Appetizers", items:[
+["ميكس محاشي كبير","Large Mixed Mahshi","150 EGY"],["ميكس محاشي صغير","Small Mixed Mahshi","100 EGY"],["محاشي بتنجان","Eggplant Mahshi","70 EGY"],
+["نفر ورق عنب • 8 قطع","1 Portion Grape Leaves • 8 pieces","75 EGY"],["سمبوسة جبن • 4 قطع","4 Pieces Cheese Sambousek","75 EGY"],["سمبوسة لحم • 4 قطع","4 Pieces Meat Sambousek","85 EGY"],
+["ممبار","Mombar • Stuffed Intestines","110 EGY"],["باكيت بطاطس","French Fries Packet","75 EGY"],["ملوخية","Molokhia","65 EGY"],
+["صينية مقبلات ريف اليمن","Reef Al Yemen Appetizer Platter","360 EGY","ميكس محاشي + ممبار + ميكس سمبوسك + بطاطس"],
+["مرق لحم","Meat Broth","50 EGY"],["شوربة عدس","Lentil Soup","85 EGY"],["لحوح","Lahoh • Yemeni Bread","40 EGY"]
+]}
+];
+
+const menu = document.getElementById('menu');
+const esc = s => String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+function render(q=''){
+  q=q.trim().toLowerCase();
+  menu.innerHTML='';
+  let found=0;
+  sections.forEach(sec=>{
+    const items=sec.items.filter(x => !q || x.join(' ').toLowerCase().includes(q));
+    if(!items.length) return;
+    found += items.length;
+    const section=document.createElement('section');
+    section.className='section'; section.id=sec.id;
+    section.innerHTML=`<div class="section-head"><div><h3>${esc(sec.title)}</h3><small>${esc(sec.en)}</small></div></div>`;
+    const grid=document.createElement('div'); grid.className='grid';
+    items.forEach((x,i)=>{
+      const c=document.createElement('article'); c.className='card'+(i<2?' featured':'');
+      c.innerHTML=`<div class="price">${esc(x[2])}</div><div class="name-ar">${esc(x[0])}</div><div class="name-en">${esc(x[1])}</div>${x[3]?`<div class="desc">${esc(x[3])}</div>`:''}`;
+      grid.appendChild(c);
+    });
+    section.appendChild(grid); menu.appendChild(section);
+  });
+  document.getElementById('empty').style.display=found?'none':'block';
+}
+render();
+document.getElementById('search').addEventListener('input',e=>render(e.target.value));
+</script>
+</body>
+</html>
